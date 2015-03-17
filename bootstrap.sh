@@ -97,7 +97,7 @@ if grep ac_sub_configure_args configure >/dev/null; then
     : # OK
   else
     echo "Fixing configure recursion"
-    ed -s configure <<'EOS' >/dev/null || true
+    sed -s configure <<'EOS' >/dev/null || true
 /ac_sub_configure_args=/
 +1
 i
